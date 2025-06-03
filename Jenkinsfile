@@ -18,12 +18,12 @@ pipeline {
             steps {
                 script {
                     dir('libs/auth') {
-                        git branch: 'main', url: 'https://github.com/joaopgs4/auth-service.git'
+                        git branch: 'main', url: 'https://github.com/joaopgs4/auth.git'
                         sh 'mvn clean install -DskipTests'
                     }
                     
                     dir('libs/account') {
-                        git branch: 'main', url: 'https://github.com/joaopgs4/account-service.git'
+                        git branch: 'main', url: 'https://github.com/joaopgs4/account.git'
                         sh 'mvn clean install -DskipTests'
                     }
                 }
