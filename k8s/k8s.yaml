@@ -17,7 +17,7 @@ spec:
         image: joaopgs4/gateway:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80  # Changed from 8080 to 80
         env:
         - name: LOGGING_LEVEL_STORE
           value: "debug"
@@ -31,6 +31,6 @@ spec:
     app: gateway
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 8080
-  type: NodePort
+    port: 80           # Service port exposed (default HTTP port)
+    targetPort: 80     # Port on the container
+  type: LoadBalancer
